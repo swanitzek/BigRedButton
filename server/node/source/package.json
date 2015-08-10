@@ -1,0 +1,17 @@
+{
+  "name": "BigRedButton-Server",
+  "version": "0.1.0",
+  "description": "An example module to illustrate the usage of a package.json",
+  "author": "Stefan Wanitzek <stefan@dreambyte.eu>",
+  "main": "app.js",
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/swanitzek/BigRedButton"
+},
+  "bugs": {
+  "url": "https://github.com/swanitzek/BigRedButton/issues"
+},
+  "dependencies": {
+    "express": "4.13.x"
+  }
+}

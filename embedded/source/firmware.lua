@@ -11,8 +11,6 @@ function buttonPressed(level)
 	--if level == 1 then gpio.trig(1, "down ") else gpio.trig(1, "up ") end
 end
 
-print "Starting..."
-
 gpio.mode(gpioIndex, gpio.INT)
 gpio.trig(gpioIndex, "up", Utils.debounce(buttonPressed))
 

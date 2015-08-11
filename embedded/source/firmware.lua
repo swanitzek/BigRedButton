@@ -1,19 +1,7 @@
+local Utils = require("utils")
+
 local gpioIndex = 3 -- Input pin (detects the press of the button)
 local counter = 0 -- counts how often the button was pressed (for debug purposes)
-
--- debounce function
-function debounce (func)
-    local last = 0
-    local delay = 2000000
-
-    return function (...)
-        local now = tmr.now()
-        if now - last < delay then return end
-
-        last = now
-        return func(...)
-    end
-end
 
 -- callback function (handles interrupt)
 function buttonPressed(level)
@@ -26,6 +14,6 @@ end
 print "Starting..."
 
 gpio.mode(gpioIndex, gpio.INT)
-gpio.trig(gpioIndex, "up", debounce(buttonPressed))
+gpio.trig(gpioIndex, "up", Utils.debounce(buttonPressed))
 
 print "Running."

@@ -56,4 +56,4 @@ build/Release
 node_modules
 
 # Ignore configuration file changes, because there always should be the version with example values checked out by default
-embedded\source\config.lua
+embedded/source/config.lua

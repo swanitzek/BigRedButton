@@ -3,6 +3,8 @@ local Utils = require("utils")
 local gpioIndex = 3 -- Input pin (detects the press of the button)
 local counter = 0 -- counts how often the button was pressed (for debug purposes)
 
+require("config")
+
 -- callback function (handles interrupt)
 function buttonPressed(level)
 	print("Trigger (" .. counter .. ")")
@@ -20,7 +22,8 @@ function sendRequest(number)
 
 	conn:on("receive", function(conn, payload) print(c) end )
 
-	conn:connect(80, "xxx.xx")
+	print("Connecting to " .. config.SERVER_HOSTNAME .. "")
+	conn:connect(config.SERVER_PORT, config.SERVER_HOSTNAME)
 
 	conn:on("receive", function(conn, payload)
 	    print(payload)
@@ -32,8 +35,8 @@ function sendRequest(number)
 
 	conn:on("connection", function(conn,payload)
 	     print("sending...")
-	     conn:send("GET /bigredbutton/setGcmId/?id=" .. number .. " HTTP/1.0\r\n") 
-	     conn:send("Host: xxx.xx\r\n") 
+	     conn:send("GET " .. config.SERVER_URL .. "/setGcmId/?id=" .. number .. " HTTP/1.0\r\n") 
+	     conn:send("Host: " .. config.SERVER_HOSTNAME .. "\r\n") 
 	     conn:send("Accept: */*\r\n") 
 	     conn:send("User-Agent: Mozilla/4.0 (compatible; ESP8266;)\r\n") 
 	     conn:send("\r\n") 

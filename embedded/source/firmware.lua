@@ -12,8 +12,6 @@ function buttonPressed(level)
 	counter = counter + 1
 	
 	sendRequest(counter)
-
-	--if level == 1 then gpio.trig(1, "down ") else gpio.trig(1, "up ") end
 end
 
 -- create a conenction to the webserver and call the /setGcmId action for testing purposes 

@@ -1,7 +1,7 @@
 {
   "name": "BigRedButton-Server",
   "version": "0.1.0",
-  "description": "An example module to illustrate the usage of a package.json",
+  "description": "Server for managing GCM-Ids and for raising GCM push-messages.",
   "author": "Stefan Wanitzek <stefan@dreambyte.eu>",
   "main": "app.js",
   "repository": {

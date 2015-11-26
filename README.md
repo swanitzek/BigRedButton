@@ -10,3 +10,8 @@ See the following repositories:
 ### Instructions
 
 to be written
+
+### See in action
+
+At YouTube:
+https://www.youtube.com/watch?v=QfcH8YSHr_Y
